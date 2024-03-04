@@ -1,7 +1,16 @@
+*{
+    box-sizing: border-box;
+}
+
 body{
     background: rgb(89,67,52);
 background: linear-gradient(90deg, rgba(89,67,52,1) 9%, rgba(73,73,86,1) 28%, rgba(9,95,223,1) 200%);
     color: white;
+}
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 h1, h2{
@@ -11,13 +20,19 @@ h1, h2{
 
 .left{
     display:flex;
+    align-items: center;
     width: 40%;
     margin-top:5%;
 }
 
 .right {
     display: flex;
+    align-items: center;
     width: 40%;
+}
+
+.center{
+    text-align: center;
 }
 
 #userForm {
@@ -27,11 +42,30 @@ h1, h2{
     
 }
 
-.topLeft{
-    margin-top:5%;
+select{
+    padding: 5px 0px 5px 0px;
+    min-width: 10vw;
 }
 
-.topRtg{
+.jobs{
+    display: flex;
+    flex-flow: column wrap;
     margin-top:5%;
-    
+    margin: 5% 10% 5% 10%;
+    max-width:50%;
+}
+
+.next{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nextBtn{
+    display: flex;
+    align-self: center;
+    padding: 5px;
+    border: 1px black solid;
+    background-color: #E5B8B8;
+    border-radius: 5%;
 }
