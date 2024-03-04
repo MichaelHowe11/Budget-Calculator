@@ -16,8 +16,8 @@
     </header>
     <main>
         <form id='userForm' action="">
-            <section class="left">
-                <section class="top left jobs">
+            <section class="selection">
+                <section class="left">
                     <label for="categoryProgessionTech" class="centerTxt">Engineering and Technical Professions</label>
                     <select name="categoryProgessionTech" id="categoryProgessionTech">
                         <option value="none">Please Pick A Career</option>
@@ -36,9 +36,7 @@
                         <option value="labTech">Lab Technician</option>
                         <option value="landscaper">Landscaper/Horticulture</option>
                     </select>
-                </section>
-                <section class="top rgt jobs">
-                    <label for="categoryProgessionHealth" class="centerTxt">Healthcare and Science Professions</label>
+                    <label for="categoryProgessionHealth">Healthcare and Science Professions</label>
                     <select name="categoryProgessionHealth" id="categoryProgessionHealth">
                         <option value="none">Please Pick A Career</option>
                         <option value="biologist">Biologist</option>
@@ -54,10 +52,9 @@
                         <option value="vet">Veterinarian</option>
                     </select>
                 </section>
-            </section>
-            <section class="right">
-                <section class="btm left jobs">
-                    <label for="categoryProgessionBusiness" class="centerTxt">Business, Management, and Creative Professions</label>
+                <section class="right">
+                    <label for="categoryProgessionBusiness" class="centerTxt">Business, Management, and Creative
+                        Professions</label>
                     <select name="categoryProgessionBusiness" id="categoryProgessionBusiness">
                         <option value="none">Please Pick A Career</option>
                         <option value="accountant">Accountant</option>
@@ -75,8 +72,6 @@
                         <option value="media">Media/Communications</option>
                         <option value="salesAssociate">Retail Sales Associate</option>
                     </select>
-                </section>
-                <section class="btm rtg jobs">
                     <label for="categoryProgessionService" class="centerTxt">Public Service and Law Enforcement</label>
                     <select name="categoryProgessionService" id="categoryProgessionService">
                         <option value="none">Please Pick A Career</option>
@@ -100,7 +95,7 @@
                 <p>
                     Please enter your custom salary in the box below.
                     <br>
-                    <input id='userInput'type="number" placeholder="Your Salary">
+                    <input id='userInput' type="number" placeholder="Your Salary">
                 </p>
             </section>
         </form>
