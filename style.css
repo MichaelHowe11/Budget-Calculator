@@ -8,12 +8,25 @@ body {
     color: white;
 }
 
-main{
+
+.left {
     display: flex;
-    flex-flow: column;
+    flex-direction: column;
+    width: 15vw;
 }
 
+.right {
+    display: flex;
+    flex-direction: column;
+    width: 15vw;
+}
+
+
+
 .userForm {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 header {
@@ -23,36 +36,20 @@ header {
 }
 
 
-.selection {
-    display: flex;
-    justify-content: space-around;
-}
 
-.left {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30%;
-    height: 50%;
-    padding: 10px;
-    background-color: black ;
-}
 
-.right {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30%;
-    padding: 10px;
-    background-color: black ;
-}
 
 .custom {
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
-    
+    background-color: black;
+    max-width: 35vw;
+
 }
+
+
 
 .custom h3 {
     background-color: black;
@@ -60,14 +57,30 @@ header {
 
 }
 
-.custom p {
+/*  */
+.custom section {
     background-color: #756464;
+    min-width: 34vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+
 }
 
-.custom input {
+.custom section input {
     background-color: #454545;
+
     color: white;
+
 }
+
+.custom section p {
+    margin: 8px;
+    padding: 0px;
+}
+
+
 .bar {
     display: flex;
     justify-content: center;
@@ -75,6 +88,7 @@ header {
     max-width: 95vw;
     flex-grow: 1;
 }
+
 .bar ul {
     margin: auto;
     width: 100%;
@@ -82,7 +96,8 @@ header {
     list-style: none;
     justify-content: space-between;
 }
-.bar ul li a{
+
+.bar ul li a {
     background-color: white;
     width: 4rem;
     height: 4rem;
@@ -94,15 +109,17 @@ header {
     font-size: 2rem;
     text-decoration: none;
 }
-.bar ul li.yes{
+
+.bar ul li.yes {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-grow: 1;
 }
+
 .bar ul li.yes::after {
     content: "";
     background-color: white;
     height: 2px;
     flex-grow: 1;
-}   
+}
