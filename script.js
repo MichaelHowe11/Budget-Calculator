@@ -4,17 +4,17 @@ list.set(`agEngineer`, 0)
 
 
 
-document.addEventListener(`DOMContentLoaded`, function(){
+document.addEventListener(`DOMContentLoaded`, function () {
 
-    let elementById = function(id) {
+    let elementById = function (id) {
         return document.getElementById(id);
     };
 
-    let addListener = function(id,event,code) {
-        elementById(id).addEventListener(event, (eventData) => {code(eventData)})
+    let addListener = function (id, event, code) {
+        elementById(id).addEventListener(event, (eventData) => { code(eventData) })
     }
 
-    addListener(`userForm`,`submit`, (eventData) => {
+    addListener(`userForm`, `submit`, (eventData) => {
         eventData.preventDefault();
         console.log(list.get("agEngineer"))
     });
