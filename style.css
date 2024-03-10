@@ -21,12 +21,37 @@ body {
     width: 15vw;
 }
 
+.left,
+.right {
+    background-color: black;
+    border-radius: 20px;
+
+    font-size: 20px;
+
+    align-items: center;
+    flex-basis: 24%;
+    padding: 30px;
+}
+
+.left select,
+.right select {
+    width: 60%;
+    height: 2.5vh;
+    margin-top: 15px;
+    background-color: rgb(202, 180, 180);
+}
+
+.left select:hover {
+    background-color: rgb(143, 124, 124);
+}
+
 
 
 .userForm {
     display: flex;
     align-items: center;
-    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 header {
@@ -45,7 +70,6 @@ header {
     justify-content: center;
     flex-direction: column;
     background-color: black;
-    max-width: 35vw;
 
 }
 
