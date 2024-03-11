@@ -66,48 +66,12 @@ document.addEventListener(`DOMContentLoaded`, function () {
         drop4.options.selectedIndex = 0
     })
 
-    const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 ';
 
 
 
-    let title = "Budget Calculator";
-
-    function generateString(length) {
-        let result = '';
-        const charactersLength = characters.length;
-        for ( let i = 0; i < length; i++ ) {
-            result += characters.charAt(Math.floor(Math.random() * charactersLength));
-        }
     
-        return result;
-    }
-
-    let titleList = title.split('');
-    let wordCount = 0;
-    let newTitleList = []
-    for (let i = 0; i < titleList.length; i++) {
-        setTimeout(function () {
-            alert('hello');
-          }, 3000);
-
-
-            while (titleList[i] != newTitleList[i]) {
-                setTimeout(function () {
-                    delete newTitleList[i];
-                    newTitleList[i] = generateString(1);
-                    console.log(newTitleList)
-                    wordCount+=1;
-                    title1.innerText = newTitleList.join('');
-                }, 100)
-            }
-
-
-
-
-
-        
-    }
-    console.log(wordCount)
+    
+    
 
   
     

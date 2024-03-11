@@ -26,6 +26,7 @@ for (let i = 0; i < titleList.length; i++) {
             newTitleList[i] = generateString(1);
             console.log(newTitleList)
             wordCount+=1;
+            
         }
 
 

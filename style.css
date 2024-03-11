@@ -4,105 +4,116 @@
 
 body {
     background: rgb(89, 67, 52);
-    background: linear-gradient(90deg, rgba(89, 67, 52, 1) 9%, rgba(73, 73, 86, 1) 28%, rgba(9, 95, 223, 1) 200%);
+    background: #053339;
     color: white;
-}
-
-
-.left {
-    display: flex;
-    flex-direction: column;
-    width: 15vw;
-}
-
-.right {
-    display: flex;
-    flex-direction: column;
-    width: 15vw;
-}
-
-.left,
-.right {
-    background-color: black;
-    border-radius: 20px;
-
-    font-size: 20px;
-
-    align-items: center;
-    flex-basis: 24%;
-    padding: 30px;
-}
-
-.left select,
-.right select {
-    width: 60%;
-    height: 2.5vh;
-    margin-top: 15px;
-    background-color: rgb(202, 180, 180);
-}
-
-.left select:hover {
-    background-color: rgb(143, 124, 124);
-}
-
-
-
-.userForm {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
 }
 
 header {
     display: flex;
     align-items: center;
     flex-direction: column;
+    background-color: #053339;
+    padding: 20px;
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+.category {
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+    height: 12vh;
+    background-color: #31363F;
+    border-radius: 20px;
+    font-size: 20px;
+    align-items: center;
+}
+
+.right {
+    margin-right: 12vw;
+}
+
+.left {
+    margin-left: 12vw;
+}
+
+.right,.left {
+    margin-top: 2%;
 }
 
 
+.category select {
+    width: 60%;
+    height: 2.5vh;
+    margin-top: 15px;
+    background-color: rgb(202, 180, 180);
+    border: none;
+    padding: 5px;
+
+}
 
 
+.category label {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.userForm {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: #2a323d;
+}
 
 .custom {
     display: flex;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: black;
-
+    background-color: #222831;
+    padding: 15px;
+    border-radius: 10px;
 }
 
-
+.next a, a:link, a:visited {
+    background-color: white;
+}
 
 .custom h3 {
-    background-color: black;
     padding: 10px;
-
+    border-radius: 10px;
+    margin: 0;
+    font-size: 30px;
 }
 
-/*  */
 .custom section {
     background-color: #756464;
     min-width: 34vw;
     display: flex;
     align-items: center;
     flex-direction: column;
-
-
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 15px;
 }
 
 .custom section input {
     background-color: #454545;
-
     color: white;
-
+    border: none;
+    padding: 8px;
+    margin-top: 10px;
 }
 
-.custom section p {
-    margin: 8px;
-    padding: 0px;
-}
 
 
 .bar {
