@@ -90,9 +90,6 @@ function updateMonthIncome(stTax1) {
 
 
 
-monthIncome = monthIncome * 
-
-    total.innerHTML = "$";
 
 }
 
