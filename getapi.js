@@ -1,5 +1,12 @@
 let utils = {}; //create a namespace for our utility functions
+function catDropChange() {
+    document.getElementById('catDrop').addEventListener('change', function (eventData) {
+        let yearSalary = (document.getElementById('catDrop').value);
+        updateMonthIncome();
 
+        console.log(yearSalary)
+    });
+}
 //get function to make an HTTP GET request
 utils.get = (url) => {
 
@@ -70,11 +77,13 @@ async function init() {
 
     //show JSON data on the html page
     root.innerHTML = buildList(occupations);
+    catDropChange();
+    // 
 }
 
 function buildList(jobs) {
     //create an empty string to hold the HTML
-    let html = '<select name="categoryDropdown" id="catDrop1"> <option value="none">Please Pick A Career</option>';
+    let html = '<select name="categoryDropdown" id="catDrop"> <option value="none">Please Pick A Career</option>';
 
     //loop through the array of job objects retrieved from the JSON data
     for (let job of jobs) {
