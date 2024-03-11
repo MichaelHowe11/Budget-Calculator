@@ -24,11 +24,24 @@ h2 {
 }
 
 
+.expenses1 {
+    margin-left: 30%;
+}
 
-.expensesForm {
+.expenses2 {
+    margin-right: 30%;
+}
+
+
+
+
+
+form {
     display: flex;
     flex-direction: column;
 }
+
+
 
 
 
