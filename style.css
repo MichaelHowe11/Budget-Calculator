@@ -23,6 +23,15 @@ h2 {
     margin: 0;
 }
 
+
+
+.expensesForm {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
 .category {
     display: flex;
     flex-direction: column;
@@ -107,6 +116,8 @@ a:visited {
 }
 
 .expenses {
+    display: flex;
+    flex-direction: column;
     width: 50%;
     display: flex;
     align-items: center;

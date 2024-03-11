@@ -1,7 +1,7 @@
 document.addEventListener(`DOMContentLoaded`, function () {
     let yearSalary = 0;
     let monthIncome = 0;
-
+let stateTaxRate = 0;
 
 
     document.getElementById('userInput').addEventListener('change', function (eventData) {
@@ -10,12 +10,28 @@ document.addEventListener(`DOMContentLoaded`, function () {
     });
 
     document.getElementById('usStates').addEventListener('change', function (eventData) {
-        let stateTaxRate = parseFloat(document.getElementById('usStates').value);
-        stTax.innerHTML = stateTaxRate*100 + "%"
+        stateTaxRate = parseFloat(document.getElementById('usStates').value);
+        stTax.innerHTML = "State Taxes: " + stateTaxRate*100 + "%"
         yearSalary = yearSalary * (1 - stateTaxRate);
 
+        total.innerHTML = "Total Budget: " + (0)
         updateMonthIncome();
     });
+
+    document.getElementById("submitButton").addEventListener("submit", function (eventData) {
+        eventData.preventDefault();
+
+        
+
+
+        console.log(stateTaxRate)
+    });
+
+    document.getElementById('usStates' || '').addEventListener('change', function (eventData) {
+
+    });
+
+
 });
 
 function updateMonthIncome() {
@@ -103,6 +119,8 @@ function updateMonthIncome() {
     let monthIncome = (parseInt(yearSalary) / 12 - totalExpenses).toFixed(2);
 
     console.log(monthIncome)
+
+    monthIncomeAf.innerHTML = monthIncome;
 
 }
 
