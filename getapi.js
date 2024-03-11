@@ -74,7 +74,7 @@ async function init() {
 
 function buildList(jobs) {
     //create an empty string to hold the HTML
-    let html = '<select name="categoryDropdown"> <option value="none">Please Pick A Career</option>';
+    let html = '<select name="categoryDropdown" id="catDrop"> <option value="none">Please Pick A Career</option>';
 
     //loop through the array of job objects retrieved from the JSON data
     for (let job of jobs) {

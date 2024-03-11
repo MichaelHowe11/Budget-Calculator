@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Budget Calculator</title>
-    <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
     <script src="getapi.js"></script>
 </head>
@@ -16,24 +15,24 @@
         <h2 class="introSummary">What is your desired profession?</h2>
     </header>
     <main>
-            <section class="wrap">
-                <section class="category">
-                    <label for="categoryProgessionService" class="centerTxt">Pick a Profession Here</label>
-                    <div id="root"></div>
+        <section class="wrap">
+            <section class="category">
+                <label for="categoryProgessionService" class="centerTxt">Pick a Profession Here</label>
+                <div id="root"></div>
+            </section>
+            <section class="custom">
+                <h3>Custom</h3>
+                <section>
+                    <p>Please enter your custom salary in the box below.</p>
+                    <br>
+                    <input id='userInput' type="number" placeholder="Your Salary">
+                    <a class="nextBtn" href="Step1.html">Next</a>
                 </section>
-                <section class="custom">
-                    <h3>Custom</h3>
-                    <section>
-                        <p>Please enter your custom salary in the box below.</p>
-                        <br>
-                        <input id='userInput' type="number" placeholder="Your Salary">
-                        <a class="nextBtn" href="Step1.html">Next</a>
-                    </section>
-                </section>
+            </section>
+            <h2>What is your State of Residence?</h2>
+            <select name="usStates" id="usStates">
 
-                <h2>What is your State of Residence?</h2>
-
-                <select name="usStates" id="usStates">
+                <option value="none">Please Select a State</option>
                     <option value="none">Please Select a State</option>
                     <option value="0.04">Alabama</option>
                     <option value="0.00">Alaska</option>
@@ -86,14 +85,10 @@
                     <option value="0.05">Wisconsin</option>
                     <option value="0.04">Wyoming</option>
                 </select>
-                
-
-            </section>
-
-
-
-
+                <h3>Your State Tax is: </h3>
+        </section>
     </main>
+    <script src="script.js"></script>
 </body>
 
 </html>

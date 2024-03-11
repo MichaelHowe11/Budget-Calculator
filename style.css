@@ -151,6 +151,10 @@ a:visited {
     justify-content: space-between;
 }
 
+h3 {
+    width: 100%;
+}
+
 .bar ul li a {
     background-color: white;
     width: 4rem;
