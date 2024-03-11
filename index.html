@@ -7,105 +7,92 @@
     <title>Budget Calculator</title>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
+    <script src="getapi.js"></script>
 </head>
 
 <body>
     <header>
-        <h1 id="title1">Budget Calculator</h1>
+        <h1>Budget Calculator</h1>
         <h2 class="introSummary">What is your desired profession?</h2>
     </header>
     <main>
-        <form id='userForm' action="" class="userForm">
-            <section class="category left">
-                <label for="categoryProgessionTech" class="centerTxt">Engineering and Technical Professions</label>
-                <select name="categoryProgessionTech" id="categoryProgessionTech">
-                    <option value="none">Please Pick A Career</option>
-                    <option value="agEngineer">Agricultural Engineer</option>
-                    <option value="architect">Architect</option>
-                    <option value="cncManu">CNC Manufacturing</option>
-                    <option value="civilEng">Civil Eng.</option>
-                    <option value="civilEngTech">Civil Engineering Tech.</option>
-                    <option value="electronicEng">Electronic Engineer</option>
-                    <option value="energyMGMT">Energy Mgmt</option>
-                    <option value="environSceince">Environmental Scientist</option>
-                    <option value="forensicPathologist">Forensic Pathologist</option>
-                    <option value="graphicDesignSpec">Graphic Design Spec.</option>
-                    <option value="H/C-HVAC">H/C HVAC</option>
-                    <option value="industrialMech">Industrial Mechanic</option>
-                    <option value="labTech">Lab Technician</option>
-                    <option value="landscaper">Landscaper/Horticulture</option>
-                </select>
-            </section>
-            <section class="category right">
-                <label for="categoryProgessionHealth">Healthcare and Science Professions</label>
-                <select name="categoryProgessionHealth" id="categoryProgessionHealth">
-                    <option value="none">Please Pick A Career</option>
-                    <option value="biologist">Biologist</option>
-                    <option value="dentist">Dentist</option>
-                    <option value="doctor">Doctor/Physician</option>
-                    <option value="emt">EMT</option>
-                    <option value="nurse">Nurse</option>
-                    <option value="nutritionist">Nutritionist</option>
-                    <option value="pharmacist">Pharmacist</option>
-                    <option value="physicalTherp">Physical Therapist</option>
-                    <option value="forensicPathologist">Forensic Pathologist</option>
-                    <option value="oceanographer">Oceanographer</option>
-                    <option value="vet">Veterinarian</option>
-                </select>
-            </section>
-            <section class="category left">
-                <label for="categoryProgessionBusiness" class="centerTxt">Business, Management, and Creative
-                    Professions</label>
-                <select name="categoryProgessionBusiness" id="categoryProgessionBusiness">
-                    <option value="none">Please Pick A Career</option>
-                    <option value="accountant">Accountant</option>
-                    <option value="businessDev">Business Dev. Officer</option>
-                    <option value="businessMang">Business Manager</option>
-                    <option value="chef">Chef</option>
-                    <option value="commercialDriver">Commercial Driver</option>
-                    <option value="CompTech">Computer Technician</option>
-                    <option value="creditMgr">Credit Union/Bank Mgr</option>
-                    <option value="daycareDirector">Daycare Director</option>
-                    <option value="fashionDesigner">Fashion Designer </option>
-                    <option value="investmentAnalyst">Investment Analyst</option>
-                    <option value="lawyer">Lawyer</option>
-                    <option value="marketingMgr">Marketing/Sales Mgr</option>
-                    <option value="media">Media/Communications</option>
-                    <option value="salesAssociate">Retail Sales Associate</option>
-                </select>
-            </section>
-            <section class="category right">
-                <label for="categoryProgessionService" class="centerTxt">Public Service, Law
-                    Enforcement, and Other</label>
-                <select name="categoryProgessionService" id="categoryProgessionService">
-                    <option value="none">Please Pick A Career</option>
-                    <option value="trailerDriver">Adv. Tractor/Trailer Driver</option>
-                    <option value="busDriver">Bus Driver</option>
-                    <option value="correctionalOfficer">Correctional Officer</option>
-                    <option value="detective">Detective</option>
-                    <option value="fireFighter">Fire Fighter</option>
-                    <option value="highwayPatrol">Highway Patrol</option>
-                    <option value="policeOfficer">Police Officer</option>
-                    <option value="principal">Principal</option>
-                    <option value="probationOfficer">Probation Officer</option>
-                    <option value="pastor">Pastor</option>
-                    <option value="UPS/Fed">UPS/Fed Ex Driver</option>
-                    <option value="socialWorker">Social Worker</option>
-                </select>
-            </section>
-            <section class="custom">
-                <h3>Custom</h3>
-                <section>
-                    <p>Please enter your custom salary in the box below.</p>
-                    <br>
-                    <input id='userInput' type="text" placeholder="Your Salary">
-                    <a class="nextBtn" href="Step1.html">Next</a>
-
+            <section class="wrap">
+                <section class="category">
+                    <label for="categoryProgessionService" class="centerTxt">Pick a Profession Here</label>
+                    <div id="root"></div>
                 </section>
+                <section class="custom">
+                    <h3>Custom</h3>
+                    <section>
+                        <p>Please enter your custom salary in the box below.</p>
+                        <br>
+                        <input id='userInput' type="number" placeholder="Your Salary">
+                        <a class="nextBtn" href="Step1.html">Next</a>
+                    </section>
+                </section>
+
+                <h2>What is your State of Residence?</h2>
+
+                <select name="usStates" id="usStates">
+                    <option value="none">Please Select a State</option>
+                    <option value="0.04">Alabama</option>
+                    <option value="0.00">Alaska</option>
+                    <option value="0.056">Arizona</option>
+                    <option value="0.065">Arkansas</option>
+                    <option value="0.0725">California</option>
+                    <option value="0.029">Colorado</option>
+                    <option value="0.0635">Connecticut</option>
+                    <option value="0.00">Delaware</option>
+                    <option value="0.06">Florida</option>
+                    <option value="0.04">Georgia</option>
+                    <option value="0.04">Hawaii</option>
+                    <option value="0.06">Idaho</option>
+                    <option value="0.0625">Illinois</option>
+                    <option value="0.07">Indiana</option>
+                    <option value="0.06">Iowa</option>
+                    <option value="0.065">Kansas</option>
+                    <option value="0.06">Kentucky</option>
+                    <option value="0.05">Louisiana</option>
+                    <option value="0.055">Maine</option>
+                    <option value="0.06">Maryland</option>
+                    <option value="0.0625">Massachusetts</option>
+                    <option value="0.06">Michigan</option>
+                    <option value="0.06875">Minnesota</option>
+                    <option value="0.07">Mississippi</option>
+                    <option value="0.04225">Missouri</option>
+                    <option value="0.00">Montana</option>
+                    <option value="0.055">Nebraska</option>
+                    <option value="0.0685">Nevada</option>
+                    <option value="0.00">New Hampshire</option>
+                    <option value="0.06625">New Jersey</option>
+                    <option value="0.05125">New Mexico</option>
+                    <option value="0.04">New York</option>
+                    <option value="0.0475">North Carolina</option>
+                    <option value="0.05">North Dakota</option>
+                    <option value="0.0575">Ohio</option>
+                    <option value="0.045">Oklahoma</option>
+                    <option value="0.0">Oregon</option>
+                    <option value="0.06">Pennsylvania</option>
+                    <option value="0.07">Rhode Island</option>
+                    <option value="0.06">South Carolina</option>
+                    <option value="0.045">South Dakota</option>
+                    <option value="0.07">Tennessee</option>
+                    <option value="0.0625">Texas</option>
+                    <option value="0.047">Utah</option>
+                    <option value="0.06">Vermont</option>
+                    <option value="0.0575">Virginia</option>
+                    <option value="0.065">Washington</option>
+                    <option value="0.06">West Virginia</option>
+                    <option value="0.05">Wisconsin</option>
+                    <option value="0.04">Wyoming</option>
+                </select>
+                
+
             </section>
-        </form>
-        <section class="next">
-        </section>
+
+
+
+
     </main>
 </body>
 

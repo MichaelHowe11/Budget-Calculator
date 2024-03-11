@@ -18,7 +18,8 @@ header {
     padding: 20px;
 }
 
-h1, h2 {
+h1,
+h2 {
     margin: 0;
 }
 
@@ -31,24 +32,22 @@ h1, h2 {
     border-radius: 20px;
     font-size: 20px;
     align-items: center;
+    margin-bottom: 2vh;
+    margin-top: 4vh;
+    min-height: 12vh;
+    margin-left: 10vw;
+
 }
 
-.right {
-    margin-right: 12vw;
-}
-
-.left {
-    margin-left: 12vw;
-}
-
-.right,.left {
-    margin-top: 2%;
+.combine {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 
-.category select {
-    width: 60%;
-    height: 2.5vh;
+ select {
+    height: 3.5vh;
     margin-top: 15px;
     background-color: rgb(202, 180, 180);
     border: none;
@@ -64,12 +63,18 @@ h1, h2 {
     margin-top: 15px;
 }
 
-.userForm {
+.wrap {
     display: flex;
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
-    background-color: #2a323d;
+    background-color: #07434B;
+}
+
+.wrap h2 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .custom {
@@ -82,10 +87,23 @@ h1, h2 {
     background-color: #222831;
     padding: 15px;
     border-radius: 10px;
+    margin-right: 10vw;
 }
 
-.next a, a:link, a:visited {
-    background-color: white;
+.next a,
+a:link,
+a:visited {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #07434B;
+    color: white;
+    text-decoration: none;
+    width: 5vw;
+    height: 5vh;
+    border-radius: 10px;
+    margin: 2%;
 }
 
 .custom h3 {
@@ -106,10 +124,11 @@ h1, h2 {
     margin-top: 15px;
 }
 
-.custom section input {
+
+
+ input {
     background-color: #454545;
     color: white;
-    border: none;
     padding: 8px;
     margin-top: 10px;
 }

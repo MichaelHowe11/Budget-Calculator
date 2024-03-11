@@ -52,18 +52,18 @@ async function init() {
     let root = document.querySelector('#root');
 
     //create a variable to hold the URL of the JSON data source
-    let url = 'https://api-demo.cartwebapp.com/data/2024';
+    let url = 'https://eecu-data-server.vercel.app/data/2024';
 
     //create a variable to hold the JSON data
-    let occupations = null;
-
+    let occupations = null; 
+    
     //try to retrieve the JSON data from the server
     try {
         //retrieve the JSON data from the server
         occupations = await utils.getJSON(url);
     }
     //catch any errors and display them in the root element
-    catch (error) {
+    catch(error){
         root.style.color = 'red';
         root.textContent = `error: ${error}`;
     }
@@ -74,38 +74,18 @@ async function init() {
 
 function buildList(jobs) {
     //create an empty string to hold the HTML
-    let html = '';
+    let html = '<select name="categoryDropdown"> <option value="none">Please Pick A Career</option>';
 
     //loop through the array of job objects retrieved from the JSON data
     for (let job of jobs) {
 
-        //start an HTML section for each job
-        html += '<section>';
+        html += `<option value="${job.salary.toLocaleString('en-US')}">${job.occupation}</option>`;
 
-        /* An alternative way of looping through each item in the data, not as useful for this assignment but something to keep in mind for a story? ... */
-        //loop through each entry and create a div for each key:value pair
-        // for (let key in job) {
-        //     html += `<div><strong>${key}</strong>: ${job[key]}</div > `;
-        // }
-
-        //create a div element for the job title
-        html += `<div><strong>Occupation</strong>: ${job.occupation}</div>`;
-        //create a div element for the salary and format it as currency
-        html += `<div><strong>Salary</strong>: $${job.salary.toLocaleString('en-US')}</div>`;
-        //close the section
-        html += '</section>';
     }
+    html += '</select>';
 
     //return the completed html
     return html;
 }
 //initialize the web page when the DOM is ready
 document.addEventListener('DOMContentLoaded', init);
-
-
-
-
-//diegos hint
-//                         <option value="63247">Accountant</option>
-//                         <option value="job.salary">job.occupation</option>
-
