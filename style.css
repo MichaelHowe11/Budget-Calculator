@@ -106,6 +106,21 @@ a:visited {
     margin: 2%;
 }
 
+.expenses {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
+.end {
+    padding-bottom: 10px;
+    border-bottom: solid black;
+}
+
+
 .custom h3 {
     padding: 10px;
     border-radius: 10px;
@@ -151,8 +166,11 @@ a:visited {
     justify-content: space-between;
 }
 
-h3 {
+h3,h4,h5 {
+    display: flex;
+    justify-content: center;
     width: 100%;
+    margin: 10px;
 }
 
 .bar ul li a {
