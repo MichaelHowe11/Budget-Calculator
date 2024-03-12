@@ -1,9 +1,9 @@
 
-
+let totalExpenses = 0;
 function updateMonthIncome(stTax1) {
     let yearSalary = document.getElementById('catDrop').value;
     console.log(yearSalary)
-
+    
 
 
 
@@ -76,14 +76,17 @@ function updateMonthIncome(stTax1) {
 
 
 
-    let totalExpenses = rent + homeInsurance + repairsMaintenance + utilities + cableTVInternet + phoneBill + carPayment + carInsurance + gasFuel + carRepairs + collegeTuition + studentLoans + groceries + clothing + entertainment + medical + petExpenses + otherExpenses + savings + investments + retirement;
+    totalExpenses = rent + homeInsurance + repairsMaintenance + utilities + cableTVInternet + phoneBill + carPayment + carInsurance + gasFuel + carRepairs + collegeTuition + studentLoans + groceries + clothing + entertainment + medical + petExpenses + otherExpenses + savings + investments + retirement;
 
     yearSalary = yearSalary.replace(/\,/g, '')
 
     console.log((yearSalary))
 
-    let monthIncome = (parseInt(yearSalary) / 12 - totalExpenses).toFixed(2);
+    let monthIncome = 0;
 
+    let customInput = document.getElementById("userInput").value;
+    console.log(customInput)
+    monthIncome = ((customInput / 12) - totalExpenses).toFixed(2) || (parseInt(yearSalary) / 12 - totalExpenses).toFixed(2);
     console.log(monthIncome)
 
     monthIncomeAft.innerHTML = "Monthly Income After Expenses: $" + monthIncome;
@@ -100,8 +103,9 @@ document.addEventListener(`DOMContentLoaded`, function () {
 
 
     document.getElementById('userInput').addEventListener('change', function (eventData) {
-        yearSalary = parseFloat(document.getElementById('userInput').value);
         updateMonthIncome();
+
+        yearSalary = parseFloat(document.getElementById('userInput').value);
     });
 
     document.getElementById('usStates').addEventListener('change', function (eventData) {
@@ -119,12 +123,18 @@ document.addEventListener(`DOMContentLoaded`, function () {
 
 
     document.getElementById("submitButton").addEventListener("submit", function (eventData) {
+        updateMonthIncome()
+
+        monthIncome = (monthIncomeAft.innerHTML).replace(/[^\d.-]/g, '')
+        console.log(totalExpenses)
         eventData.preventDefault();
 
 
 
 
         console.log(stateTaxRate)
+
+        console.log(monthIncome)
     });
 
 
