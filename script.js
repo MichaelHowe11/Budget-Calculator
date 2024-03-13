@@ -1,8 +1,9 @@
 let totalExpenses = 0;
 
-function updateMonthIncome(stTax1) {
-    let yearSalary = document.getElementById('catDrop').value;
-    console.log(yearSalary)
+function updateMonthIncome() {
+    let tempSalary = document.getElementById('catDrop').value.replace(/\,/g, '');
+    let yearSalary = parseFloat(tempSalary);
+
     let mortgage = parseFloat(document.getElementById('mortgage').value) || 0;
     let rent = parseFloat(document.getElementById('rent').value) || 0;
     let homeInsurance = parseFloat(document.getElementById('homeInsurance').value) || 0;
@@ -25,39 +26,58 @@ function updateMonthIncome(stTax1) {
     let savings = parseFloat(document.getElementById('savings').value) || 0;
     let investments = parseFloat(document.getElementById('investments').value) || 0;
     let retirement = parseFloat(document.getElementById('retirement').value) || 0;
-
     totalExpenses = rent + homeInsurance + repairsMaintenance + utilities + cableTVInternet + phoneBill + carPayment + carInsurance + gasFuel + carRepairs + collegeTuition + studentLoans + groceries + clothing + entertainment + medical + petExpenses + otherExpenses + savings + investments + retirement + mortgage;
 
-    yearSalary = yearSalary.replace(/\,/g, '');
-
     let monthIncome = 0;
-
+    let stTax2 = document.getElementById('usStates').value;
     let customInput = document.getElementById("userInput").value;
 
     if (customInput != "") {
         customInput = parseFloat(customInput);
-        monthIncome = (customInput / 12) * (1 - parseFloat(document.getElementById('usStates').value)) - totalExpenses;
+        stTax2 = (customInput / 12) * stTax2
+        monthIncome = ((customInput / 12) - stTax2) - totalExpenses
         monthIncome = monthIncome || 0;
     } else {
         monthIncome = (parseFloat(yearSalary) / 12) * (1 - parseFloat(document.getElementById('usStates').value)) - totalExpenses;
     }
-    monthIncomeAft.innerHTML = "Monthly Income After Expenses: $" + monthIncome.toFixed(2)||yearSalary.toFixed(2);
+    monthIncome = monthIncome || 0;
 
-    let monthIncome2 = monthIncome;
+    console.log(monthIncome)
+    monthIncomeAft.innerHTML = "Monthly Income After Expenses: $"+monthIncome
+    if (monthIncome <= 0) {
+        monthIncomeAft.innerHTML = customInput / 12
+    }
+    let fedTax = 0.07 * monthIncome;
+    let socSec = 0.062 * monthIncome;
+    let med = 0.0145 * monthIncome;
+    let stDis = 0.01 * monthIncome;
+    let retInv = 0.05 * monthIncome;
 
-    let fedTax = 0.07*monthIncome
-    let socSec = 0.062*monthIncome
-    let med = 0.0145*monthIncome
-    let stDis = 0.01*monthIncome
-    let retInv = 0.05*monthIncome
+    monthIncome = monthIncome - (fedTax + socSec + med + stDis + retInv + 180);
 
-    monthIncome = monthIncome - (fedTax+socSec+med+stDis+retInv+180)
+    monthIncome = monthIncome || parseFloat(tempSalary);
+    yearSalary = yearSalary || parseFloat(tempSalary);
+    console.log(parseFloat(tempSalary))
 
-    yearSalary = yearSalary - (fedTax+socSec+med+stDis+retInv+180)
+    monthIncome = parseFloat(monthIncome);
+    yearSalary = parseFloat(yearSalary);
 
+    console.log(monthIncome);
+    console.log(yearSalary);
 
+    let monthlyIncomeAfterExpenses = (yearSalary / 12) - totalExpenses||0;
+console.log(monthlyIncomeAfterExpenses)
 
-    total.innerHTML = "Total Budget: $" + monthIncome.toFixed(2)||yearSalary.toFixed(2);
+    if (parseFloat(monthIncomeAft.innerHTML) <= 0) {
+        monthIncomeAft.innerHTML = "Monthly Income After Expenses: $" + parseFloat(monthlyIncomeAfterExpenses).toFixed(2);
+
+    }
+
+    if (monthIncome <= 0) {
+        total.innerHTML = "Total Budget: $" + customInput / 12;
+    } else {
+        total.innerHTML = "Total Budget: $" + parseFloat(monthIncome).toFixed(2);
+    }
 }
 
 document.addEventListener(`DOMContentLoaded`, function () {
@@ -81,18 +101,16 @@ document.addEventListener(`DOMContentLoaded`, function () {
     document.getElementById("submitButton").addEventListener("submit", function (eventData) {
         updateMonthIncome();
         stateTaxRate = parseFloat(document.getElementById('usStates').value);
-        monthIncome = parseFloat(monthIncomeAft.innerHTML.replace(/[^\d.-]/g, '')) || 0;
+        monthIncome = parseFloat(monthIncomeAft.innerHTML.replace(/[^\d.-]/g, ''));
+        console.log(monthIncome)
         eventData.preventDefault();
     });
-
     function expenFunction() {
         updateMonthIncome();
     }
-
     document.getElementById('expen1').addEventListener('change', function (eventData) {
         updateMonthIncome();
     });
-
     document.getElementById('expen2').addEventListener('change', function (eventData) {
         updateMonthIncome();
     });
