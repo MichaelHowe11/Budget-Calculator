@@ -62,15 +62,15 @@ async function init() {
     let url = 'https://eecu-data-server.vercel.app/data/2024';
 
     //create a variable to hold the JSON data
-    let occupations = null; 
-    
+    let occupations = null;
+
     //try to retrieve the JSON data from the server
     try {
         //retrieve the JSON data from the server
         occupations = await utils.getJSON(url);
     }
     //catch any errors and display them in the root element
-    catch(error){
+    catch (error) {
         root.style.color = 'red';
         root.textContent = `error: ${error}`;
     }

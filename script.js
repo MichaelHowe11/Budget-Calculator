@@ -43,9 +43,9 @@ function updateMonthIncome() {
     monthIncome = monthIncome || 0;
 
     console.log(monthIncome)
-    monthIncomeAft.innerHTML = "Monthly Income After Expenses: $"+monthIncome
+    monthIncomeAft.innerHTML = "Monthly Income After Expenses: $" + monthIncome.toFixed(2)
     if (monthIncome <= 0) {
-        monthIncomeAft.innerHTML = customInput / 12
+        monthIncomeAft.innerHTML = "Monthly Income After Expenses: $" + (customInput / 12)
     }
     let fedTax = 0.07 * monthIncome;
     let socSec = 0.062 * monthIncome;
@@ -65,8 +65,8 @@ function updateMonthIncome() {
     console.log(monthIncome);
     console.log(yearSalary);
 
-    let monthlyIncomeAfterExpenses = (yearSalary / 12) - totalExpenses||0;
-console.log(monthlyIncomeAfterExpenses)
+    let monthlyIncomeAfterExpenses = (yearSalary / 12) - totalExpenses || 0;
+    console.log(monthlyIncomeAfterExpenses)
 
     if (parseFloat(monthIncomeAft.innerHTML) <= 0) {
         monthIncomeAft.innerHTML = "Monthly Income After Expenses: $" + parseFloat(monthlyIncomeAfterExpenses).toFixed(2);
@@ -82,7 +82,6 @@ console.log(monthlyIncomeAfterExpenses)
 
 document.addEventListener(`DOMContentLoaded`, function () {
     let yearSalary = 0;
-    let monthIncome = 0;
     let stateTaxRate = 0;
 
     document.getElementById('userInput').addEventListener('change', function (eventData) {
@@ -98,14 +97,8 @@ document.addEventListener(`DOMContentLoaded`, function () {
         updateMonthIncome(stateTaxRate);
     });
 
-    document.getElementById("submitButton").addEventListener("submit", function (eventData) {
-        updateMonthIncome();
-        stateTaxRate = parseFloat(document.getElementById('usStates').value);
-        monthIncome = parseFloat(monthIncomeAft.innerHTML.replace(/[^\d.-]/g, ''));
-        console.log(monthIncome)
-        eventData.preventDefault();
-    });
-    function expenFunction() {
+
+    function expenFunction() {``
         updateMonthIncome();
     }
     document.getElementById('expen1').addEventListener('change', function (eventData) {
