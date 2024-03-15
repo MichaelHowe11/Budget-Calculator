@@ -28,7 +28,14 @@ h2 {
     margin-right: 30%;
 }
 
-
+.totalResults button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    width: 30%;
+    align-items: center;
+}
 
 
 
